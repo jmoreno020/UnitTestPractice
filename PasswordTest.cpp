@@ -20,3 +20,10 @@ TEST(PasswordTest, single_letter_password)
 	int actual = my_password.count_leading_characters("Z");
 	ASSERT_EQ(1, actual);
 }
+
+//checks if the password starts with "admin"
+TEST(PasswordTest, admin_variant) {
+	Password my_password;
+	int actual = my_password.count_leading_characters("admin");
+	ASSERT_EQ(1, actual);
+}
