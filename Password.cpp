@@ -1,7 +1,9 @@
 #include "Password.h"
 #include <string>
+#include <cctype>
 
 using std::string;
+using namespace std;
 
 /*
   The function receives a string counts how many times the same character 
@@ -24,5 +26,28 @@ int Password::count_leading_characters(string phrase){
   letter and at least one lower-case letter
 */
 bool Password::has_mixed_case(string pass){
-  return false;
+  //bool for lower case
+  //bool for upper case
+  bool lower = false;
+  bool upper = false;
+  //only pass if both are true
+
+  //iterate through chars, break early if both found
+  for (size_t index = 0; index < pass.length(); index++) {
+     //reassign teh current char
+     unsigned char current = static_cast<unsigned char>(pass[index]);
+     //check for lower
+     if (islower(current)) {
+       lower = true;
+     //check for upper
+     } else if (isupper(current)) {
+       upper = true;
+     }
+
+     if (upper && lower) {
+       return true;
+     }
+  }
+        //didnt find both, return fals
+	return false;
 }
