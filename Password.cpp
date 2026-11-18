@@ -30,6 +30,10 @@ int Password::count_leading_characters(string phrase){
   letter and at least one lower-case letter
 */
 bool Password::has_mixed_case(string pass){
+  //checks for empty input ""
+  if (pass.empty()) {
+    return 0;
+  }
   //bool for lower case
   //bool for upper case
   bool lower = false;

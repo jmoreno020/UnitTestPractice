@@ -88,3 +88,11 @@ TEST(PasswordTest, all_symbols) {
 	bool actual = my_password.has_mixed_case("123!");
 	ASSERT_FALSE(actual);
 }
+
+
+//empty pass
+TEST(PasswordTest, empty_only) {
+	Password my_password;
+	bool actual = my_password.has_mixed_case("");
+	ASSERT_FALSE(actual);
+}
