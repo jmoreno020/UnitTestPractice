@@ -81,3 +81,10 @@ TEST(PasswordTest, all_lower) {
 	bool actual = my_password.has_mixed_case("hey");
 	ASSERT_FALSE(actual);
 }
+
+//mixed symbols
+TEST(PasswordTest, all_symbols) {
+	Password my_password;
+	bool actual = my_password.has_mixed_case("123!");
+	ASSERT_FALSE(actual);
+}
